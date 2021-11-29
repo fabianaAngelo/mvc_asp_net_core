@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using SalesMVC.Models.Enums;
 
 namespace SalesMVC.Models
@@ -6,7 +7,9 @@ namespace SalesMVC.Models
     public class SalesRecord
     {
         public int Id { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyy}")]
         public DateTime Date { get; set; }
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double Amount { get; set; }
         public SalesStatus Status { get; set; }
         public Seller Seller { get; set; }
